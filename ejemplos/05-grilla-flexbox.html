@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grilla de 12 columnas con Flexbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #1e293b;
+            max-width: 960px;
+            margin: 32px auto;
+            padding: 0 12px;
+        }
+
+        .fila {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .columna {
+            box-sizing: border-box;
+            flex: 0 0 auto;
+            padding: 2px;
+        }
+
+        /* El ancho de cada bloque equivale a las columnas que ocupa sobre 12. */
+        .col-1 { width: calc(100% * 1 / 12); }
+        .col-2 { width: calc(100% * 2 / 12); }
+        .col-3 { width: calc(100% * 3 / 12); }
+        .col-4 { width: calc(100% * 4 / 12); }
+        .col-5 { width: calc(100% * 5 / 12); }
+        .col-6 { width: calc(100% * 6 / 12); }
+        .col-7 { width: calc(100% * 7 / 12); }
+        .col-8 { width: calc(100% * 8 / 12); }
+        .col-9 { width: calc(100% * 9 / 12); }
+        .col-10 { width: calc(100% * 10 / 12); }
+        .col-11 { width: calc(100% * 11 / 12); }
+        .col-12 { width: 100%; }
+
+        .bloque {
+            background-color: #dce8f7;
+            padding: 12px 0;
+            text-align: center;
+        }
+
+        .referencia .bloque {
+            background-color: #25456b;
+            color: white;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .ejemplo .columna {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Grilla de 12 columnas con Flexbox</h1>
+        <p>La primera fila muestra las 12 unidades. Las demás agrupan esas unidades en bloques.</p>
+
+        <h2>12 columnas iguales</h2>
+        <div class="fila referencia">
+            <div class="columna col-1"><div class="bloque">1</div></div>
+            <div class="columna col-1"><div class="bloque">2</div></div>
+            <div class="columna col-1"><div class="bloque">3</div></div>
+            <div class="columna col-1"><div class="bloque">4</div></div>
+            <div class="columna col-1"><div class="bloque">5</div></div>
+            <div class="columna col-1"><div class="bloque">6</div></div>
+            <div class="columna col-1"><div class="bloque">7</div></div>
+            <div class="columna col-1"><div class="bloque">8</div></div>
+            <div class="columna col-1"><div class="bloque">9</div></div>
+            <div class="columna col-1"><div class="bloque">10</div></div>
+            <div class="columna col-1"><div class="bloque">11</div></div>
+            <div class="columna col-1"><div class="bloque">12</div></div>
+        </div>
+
+        <h2>8 + 4</h2>
+        <div class="fila ejemplo">
+            <div class="columna col-8"><div class="bloque">Contenido principal</div></div>
+            <div class="columna col-4"><div class="bloque">Barra lateral</div></div>
+        </div>
+
+        <h2>6 + 6</h2>
+        <div class="fila ejemplo">
+            <div class="columna col-6"><div class="bloque">Primera mitad</div></div>
+            <div class="columna col-6"><div class="bloque">Segunda mitad</div></div>
+        </div>
+
+        <h2>4 + 4 + 4</h2>
+        <div class="fila ejemplo">
+            <div class="columna col-4"><div class="bloque">Primer bloque</div></div>
+            <div class="columna col-4"><div class="bloque">Segundo bloque</div></div>
+            <div class="columna col-4"><div class="bloque">Tercer bloque</div></div>
+        </div>
+    </main>
+</body>
+</html>

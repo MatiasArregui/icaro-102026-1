@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de práctica</title>
+</head>
+<body>
+    <h1>Formulario de práctica</h1>
+    <p>Usá datos ficticios. Al enviar, mirá cómo aparecen en la URL.</p>
+
+    <form action="03-formulario.html" method="get">
+        <p>
+            <label for="nombre">Nombre (obligatorio)</label><br>
+            <input type="text" id="nombre" name="nombre" required>
+        </p>
+
+        <p>
+            <label for="correo">Correo (obligatorio)</label><br>
+            <input type="email" id="correo" name="correo" required>
+        </p>
+
+        <p>
+            <label for="tema">Tema de interés</label><br>
+            <select id="tema" name="tema">
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+            </select>
+        </p>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

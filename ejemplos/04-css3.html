@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Características de CSS3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+            color: #1a2b2a;
+            background-color: #f1f5f4;
+            margin: 0;
+            padding: 40px 16px;
+        }
+
+        .tarjeta {
+            max-width: 420px;
+            margin: 0 auto;
+            padding: 24px;
+            background: linear-gradient(135deg, #ffffff, #bce6dc);
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(26, 43, 42, 0.18);
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        .enlace {
+            display: inline-block;
+            padding: 8px 16px;
+            color: white;
+            background-color: #23584f;
+            border-radius: 8px;
+            transition: transform 200ms ease;
+        }
+
+        .enlace:hover, .enlace:focus-visible {
+            transform: translateY(-4px);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .enlace {
+                transition: none;
+            }
+
+            .enlace:hover, .enlace:focus-visible {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="tarjeta">
+        <h1>Características de CSS3</h1>
+        <p>El fondo de esta tarjeta es un degradado. Los bordes redondeados y la sombra también se dibujan con CSS.</p>
+        <a class="enlace" href="02-css-basico.html">Ver el ejemplo de CSS básico</a>
+    </main>
+</body>
+</html>

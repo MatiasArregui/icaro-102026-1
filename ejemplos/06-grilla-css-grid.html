@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grilla de 12 columnas con CSS Grid</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #1e293b;
+            max-width: 960px;
+            margin: 32px auto;
+            padding: 0 12px;
+        }
+
+        .grilla {
+            display: grid;
+            grid-template-columns: repeat(12, minmax(0, 1fr));
+            gap: 4px;
+        }
+
+        /* span indica cuántas columnas ocupa el bloque. */
+        .col-4 { grid-column: span 4; }
+        .col-6 { grid-column: span 6; }
+        .col-8 { grid-column: span 8; }
+
+        .bloque {
+            background-color: #dce8f7;
+            padding: 12px 0;
+            text-align: center;
+        }
+
+        .referencia .bloque {
+            background-color: #25456b;
+            color: white;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .ejemplo .bloque {
+                grid-column: span 12;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Grilla de 12 columnas con CSS Grid</h1>
+        <p>La primera fila muestra las 12 columnas. Las demás muestran cómo un bloque puede ocupar varias.</p>
+
+        <h2>12 columnas iguales</h2>
+        <div class="grilla referencia">
+            <div class="bloque">1</div>
+            <div class="bloque">2</div>
+            <div class="bloque">3</div>
+            <div class="bloque">4</div>
+            <div class="bloque">5</div>
+            <div class="bloque">6</div>
+            <div class="bloque">7</div>
+            <div class="bloque">8</div>
+            <div class="bloque">9</div>
+            <div class="bloque">10</div>
+            <div class="bloque">11</div>
+            <div class="bloque">12</div>
+        </div>
+
+        <h2>8 + 4</h2>
+        <div class="grilla ejemplo">
+            <div class="bloque col-8">Contenido principal</div>
+            <div class="bloque col-4">Barra lateral</div>
+        </div>
+
+        <h2>6 + 6</h2>
+        <div class="grilla ejemplo">
+            <div class="bloque col-6">Primera mitad</div>
+            <div class="bloque col-6">Segunda mitad</div>
+        </div>
+
+        <h2>4 + 4 + 4</h2>
+        <div class="grilla ejemplo">
+            <div class="bloque col-4">Primer bloque</div>
+            <div class="bloque col-4">Segundo bloque</div>
+            <div class="bloque col-4">Tercer bloque</div>
+        </div>
+    </main>
+</body>
+</html>
