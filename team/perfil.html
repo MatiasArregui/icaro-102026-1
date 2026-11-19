@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cosme Fulanito · Perfil</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="perfil.css">
+</head>
+<body>
+    <main class="perfil">
+        <a class="volver-agenda" href="index.html">Volver al equipo</a>
+
+        <header class="cabecera-perfil">
+            <input class="control-portada" id="ampliar-portada" type="checkbox" aria-controls="portada-perfil">
+            <img class="portada-perfil" id="portada-perfil"
+                src="../images/portadas/lago-al-atardecer.png"
+                alt="Montañas y cielo rosado reflejados en un lago al atardecer">
+            <div class="presentacion-perfil">
+                <div>
+                    <h1>Cosme Fulanito</h1>
+                    <p class="ubicacion-perfil">Desde Rosario</p>
+                    <p>Le gusta la fotografía y quiere aprender a crear su propio sitio.</p>
+                </div>
+                <label class="etiqueta-portada" for="ampliar-portada">Ampliar portada</label>
+            </div>
+        </header>
+
+        <div class="grupo-perfil">
+            <section class="tarjeta-perfil">
+                <h2>Una frase que me identifica</h2>
+                <blockquote>Mirar despacio también es una forma de aprender.</blockquote>
+            </section>
+
+            <section class="tarjeta-perfil">
+                <h2>Mi repositorio</h2>
+                <a href="https://github.com/alezvi/icaro-102026-1">Ver repositorio en GitHub</a>
+            </section>
+        </div>
+
+        <div class="grupo-perfil">
+            <section class="tarjeta-perfil">
+                <h2>Un video que me gusta</h2>
+                <iframe class="reproductor-video"
+                    src="https://www.youtube-nocookie.com/embed/WhWc3b3KhnY"
+                    title="Spring, cortometraje de Blender Studio en YouTube"
+                    loading="lazy" referrerpolicy="strict-origin-when-cross-origin"
+                    allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+                <a class="enlace-reproductor" href="https://www.youtube.com/watch?v=WhWc3b3KhnY">Abrir en YouTube</a>
+            </section>
+
+            <section class="tarjeta-perfil">
+                <h2>Lo que escucho</h2>
+                <iframe class="reproductor-audio"
+                    src="https://open.spotify.com/embed/episode/40GYVCmGJq1ifMZfKxxAs1"
+                    title="Episodio Who Decides What Ships on the Web? de Syntax en Spotify"
+                    loading="lazy" allow="encrypted-media; fullscreen; picture-in-picture"></iframe>
+                <a class="enlace-reproductor" href="https://open.spotify.com/episode/40GYVCmGJq1ifMZfKxxAs1">Abrir en Spotify</a>
+            </section>
+        </div>
+
+        <section class="tarjeta-perfil">
+            <h2>Contacto</h2>
+            <form class="formulario-perfil" aria-describedby="nota-formulario">
+                <div class="grupo-perfil">
+                    <div class="campo-perfil">
+                        <label for="nombre-contacto">Nombre</label>
+                        <input type="text" maxlength="20" id="nombre-contacto" name="nombre">
+                    </div>
+                    <div class="campo-perfil">
+                        <label for="correo-contacto">Correo</label>
+                        <input type="email" id="correo-contacto" name="correo">
+                    </div>
+                </div>
+                <div class="campo-perfil">
+                    <label for="mensaje-contacto">Mensaje</label>
+                    <textarea id="mensaje-contacto" name="mensaje" rows="4"></textarea>
+                </div>
+                <p class="nota-formulario" id="nota-formulario">Formulario de práctica. El envío está deshabilitado.</p>
+                <button class="boton-envio" type="submit" disabled>Enviar</button>
+            </form>
+        </section>
+    </main>
+</body>
+</html>

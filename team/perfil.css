@@ -1,0 +1,235 @@
+.perfil {
+    --borde-perfil: #cbd5e7;
+    --acento-perfil: #5c329f;
+    max-width: 864px;
+    margin: 0 auto;
+    padding: 24px 20px 48px;
+}
+
+.perfil a {
+    color: var(--acento-perfil);
+    text-underline-offset: 3px;
+}
+
+.perfil :focus-visible {
+    outline: 2px solid var(--acento-perfil);
+    outline-offset: 3px;
+}
+
+.volver-agenda {
+    display: inline-block;
+    margin-bottom: 24px;
+}
+
+.cabecera-perfil,
+.tarjeta-perfil {
+    background-color: #fff;
+    border: 1px solid var(--borde-perfil);
+    border-radius: 16px;
+}
+
+.cabecera-perfil {
+    overflow: hidden;
+    margin-bottom: 24px;
+}
+
+.control-portada {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(50%);
+}
+
+.portada-perfil {
+    display: block;
+    width: 100%;
+    height: clamp(150px, 29vw, 264px);
+    object-fit: cover;
+    /* La transición suaviza el cambio de altura cuando se marca la casilla. */
+    transition: height 360ms ease;
+}
+
+.control-portada:checked + .portada-perfil {
+    height: clamp(230px, 48vw, 416px);
+}
+
+.presentacion-perfil {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px 20px;
+    padding: 20px 22px 22px;
+}
+
+.presentacion-perfil h1 {
+    margin: 0;
+    font-size: clamp(30px, 5vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+}
+
+.presentacion-perfil p {
+    margin: 6px 0 0;
+}
+
+.ubicacion-perfil,
+.nota-formulario {
+    color: #566174;
+}
+
+.etiqueta-portada,
+.boton-envio {
+    padding: 8px 15px;
+    border: 1px solid #929eb3;
+    border-radius: 8px;
+    font: inherit;
+    font-weight: 600;
+}
+
+.etiqueta-portada {
+    background-color: #f8f9fc;
+    color: #263453;
+    cursor: pointer;
+    transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.etiqueta-portada:hover,
+.control-portada:checked ~ .presentacion-perfil .etiqueta-portada {
+    background-color: #ede5fb;
+    border-color: #947cc3;
+}
+
+.control-portada:focus-visible ~ .presentacion-perfil .etiqueta-portada {
+    outline: 2px solid var(--acento-perfil);
+    outline-offset: 3px;
+}
+
+.grupo-perfil {
+    display: flex;
+    gap: 20px;
+}
+
+.perfil > .grupo-perfil {
+    margin-bottom: 22px;
+}
+
+.grupo-perfil > * {
+    flex: 1;
+    min-width: 0;
+}
+
+.tarjeta-perfil {
+    padding: 18px 21px;
+}
+
+.tarjeta-perfil h2 {
+    margin: 0 0 12px;
+    font-size: 22px;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+}
+
+.tarjeta-perfil blockquote {
+    margin: 0;
+    padding: 4px 0 4px 15px;
+    border-left: 4px solid #c3acf0;
+    font-size: 18px;
+    font-style: italic;
+}
+
+.reproductor-video,
+.reproductor-audio {
+    display: block;
+    width: 100%;
+    border: 0;
+    border-radius: 9px;
+    background-color: #eef2f8;
+}
+
+.reproductor-video {
+    aspect-ratio: 16 / 9;
+    min-height: 200px;
+}
+
+.reproductor-audio {
+    height: 152px;
+}
+
+.enlace-reproductor {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.formulario-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.campo-perfil {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.campo-perfil label {
+    font-weight: 600;
+}
+
+.campo-perfil input,
+.campo-perfil textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #929eb3;
+    border-radius: 7px;
+    background-color: #fff;
+    color: inherit;
+    font: inherit;
+}
+
+.campo-perfil textarea {
+    resize: vertical;
+}
+
+.nota-formulario {
+    margin: 0;
+    font-size: 14px;
+}
+
+.boton-envio {
+    align-self: flex-start;
+    border-color: #e0e5ed;
+    background-color: #e0e5ed;
+    color: #566174;
+}
+
+@media (max-width: 680px) {
+    .grupo-perfil {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .perfil > .grupo-perfil,
+    .cabecera-perfil {
+        margin-bottom: 12px;
+    }
+}
+
+@media (max-width: 380px) {
+    .perfil {
+        padding-inline: 10px;
+    }
+
+    .tarjeta-perfil {
+        padding-inline: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portada-perfil,
+    .etiqueta-portada {
+        transition: none;
+    }
+}

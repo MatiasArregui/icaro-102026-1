@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    background-color: #eef2f8;
+    color: #0c1325;
+    font-family: Inter, system-ui, sans-serif;
+    line-height: 1.5;
+}
+
+.agenda {
+    max-width: 672px;
+    margin: 0 auto;
+    padding: 64px 20px;
+}
+
+.encabezado {
+    margin-bottom: 22px;
+}
+
+.encabezado h1 {
+    margin: 0 0 4px;
+    font-size: 38px;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+}
+
+.encabezado p {
+    margin: 0;
+    color: #566174;
+    font-size: 20px;
+}
+
+.lista-contactos {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: #fff;
+    border: 1px solid #cbd5e7;
+    border-radius: 18px;
+}
+
+.contacto {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 15px 26px;
+}
+
+.contacto + .contacto {
+    border-top: 1px solid #dbe4f2;
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #e3d5fa;
+    color: #421777;
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.avatar-azul {
+    background-color: #d5e7fc;
+    color: #1648a0;
+}
+
+.avatar-verde {
+    background-color: #d5f7e4;
+    color: #165e37;
+}
+
+.datos {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.datos h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.datos p {
+    margin: 2px 0 0;
+    color: #566174;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.datos .ciudad {
+    margin-top: 4px;
+    font-size: 13px;
+}
+
+.enlace-perfil {
+    color: inherit;
+    text-decoration-color: #947cc3;
+    text-underline-offset: 3px;
+    transition: color 180ms ease;
+}
+
+.enlace-perfil:hover,
+.enlace-perfil:focus-visible {
+    color: #5c329f;
+}
+
+@media (max-width: 520px) {
+    .agenda {
+        padding: 36px 16px;
+    }
+
+    .encabezado h1 {
+        font-size: 30px;
+    }
+
+    .encabezado p {
+        font-size: 17px;
+    }
+
+    .contacto {
+        gap: 14px;
+        padding: 14px 16px;
+    }
+
+    .avatar {
+        width: 48px;
+        height: 48px;
+        font-size: 18px;
+    }
+
+    .datos h2 {
+        font-size: 16px;
+    }
+}
