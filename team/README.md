@@ -21,18 +21,18 @@ Cuando publique la rama de la clase, te pido que ejecutes estos comandos de a un
 
 ```bash
 git fetch origin
-git switch --track origin/clase-07-agenda-contactos
+git switch --track origin/clase-07-team
 ```
 
-Si ya tenés esa rama en tu copia local, usá `git switch clase-07-agenda-contactos` en la segunda línea.
+Si ya tenés esa rama en tu copia local, usá `git switch clase-07-team` en la segunda línea.
 
-**Para comprobarlo**, ejecutá `git branch --show-current`. Espero que veas `clase-07-agenda-contactos`.
+**Para comprobarlo**, ejecutá `git branch --show-current`. Espero que veas `clase-07-team`.
 
 ### Abrí la página del equipo con Live Server
 
-Te pido que abras la carpeta `sitio-web` en VS Code desde **Archivo → Abrir carpeta**. Si todavía no tenés Live Server, abrí la vista **Extensiones**, buscá **Live Server** de Ritwick Dey e instalala. En el explorador de VS Code, buscá `agenda-contactos/index.html`, hacé clic derecho sobre el archivo y elegí **Open with Live Server**. [Extensión Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
+Te pido que abras la carpeta `sitio-web` en VS Code desde **Archivo → Abrir carpeta**. Si todavía no tenés Live Server, abrí la vista **Extensiones**, buscá **Live Server** de Ritwick Dey e instalala. En el explorador de VS Code, buscá `team/index.html`, hacé clic derecho sobre el archivo y elegí **Open with Live Server**. [Extensión Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
 
-**Para comprobarlo**, fijate que el navegador muestre una dirección que empiece con `http://` y termine con `/agenda-contactos/index.html`. Deberías ver las tres fichas de ejemplo, entre ellas la de Cosme Fulanito. Dejá Live Server abierto mientras trabajás.
+**Para comprobarlo**, fijate que el navegador muestre una dirección que empiece con `http://` y termine con `/team/index.html`. Deberías ver las tres fichas de ejemplo, entre ellas la de Cosme Fulanito. Dejá Live Server abierto mientras trabajás.
 
 ## 3. Creá tu rama de trabajo
 
@@ -49,9 +49,9 @@ git switch -c ficha/nombre-apellido
 Te pido que prepares tu foto o avatar, tu nombre, una síntesis de lo que contaste en la primera clase y la ciudad desde donde te conectás.
 
 1. Copiá tu imagen a `images/avatars/`. Poné tu nombre y apellido en minúsculas, con guiones y sin tildes. Conservá la extensión real del archivo. Por ejemplo, `cosme-fulanito.jpg` para un JPG o `cosme-fulanito.png` para un PNG.
-2. Abrí `agenda-contactos/index.html` en tu editor. Copiá una ficha completa, desde `<li class="contacto">` hasta su `</li>`, y pegala al final de la lista, justo antes de `</ul>`. Hacé los cambios en esa copia.
+2. Abrí `team/index.html` en tu editor. Copiá una ficha completa, desde `<li class="contacto">` hasta su `</li>`, y pegala al final de la lista, justo antes de `</ul>`. Hacé los cambios en esa copia.
 3. Dentro del `<h2>` de tu ficha, dejá tu nombre como texto. Si copiaste la ficha de Cosme, reemplazá todo lo que hay entre `<h2>` y `</h2>` por tu nombre. Debajo, escribí una o dos frases sobre tu presentación y actualizá la ciudad, por ejemplo, «Desde Rosario». Más adelante vas a enlazar tu propio perfil.
-4. Reemplazá el `<span>` de las iniciales por una imagen como esta. Cambiá `cosme-fulanito.jpg` por el nombre exacto de tu archivo, incluida la extensión. La ruta empieza con `../` porque el HTML está dentro de `agenda-contactos` y debe subir un nivel para llegar a `images`. En este caso, `alt=""` sirve porque tu nombre ya se lee junto a la imagen.
+4. Reemplazá el `<span>` de las iniciales por una imagen como esta. Cambiá `cosme-fulanito.jpg` por el nombre exacto de tu archivo, incluida la extensión. La ruta empieza con `../` porque el HTML está dentro de `team` y debe subir un nivel para llegar a `images`. En este caso, `alt=""` sirve porque tu nombre ya se lee junto a la imagen.
 
 ```html
 <img class="avatar" src="../images/avatars/cosme-fulanito.jpg" alt="">
@@ -64,8 +64,8 @@ Te pido que prepares tu foto o avatar, tu nombre, una síntesis de lo que contas
 Primero, quiero que revises qué cambió en la página del equipo y elijas qué archivos va a guardar Git. Desde `sitio-web`, ejecutá estos comandos. En `git add`, reemplazá el nombre de la imagen de ejemplo por el de tu archivo.
 
 ```bash
-git diff -- agenda-contactos/index.html
-git add agenda-contactos/index.html images/avatars/cosme-fulanito.jpg
+git diff -- team/index.html
+git add team/index.html images/avatars/cosme-fulanito.jpg
 git diff --cached --name-only
 ```
 
@@ -95,9 +95,9 @@ Ahora te propongo agregar tres intereses debajo de la ciudad. Elegí palabras o 
 
 Te invito a hacer clic en el nombre de Cosme Fulanito en la página del equipo para abrir [el perfil modelo](perfil.html). Probá **Ampliar portada** con un clic y después con el teclado. Usá `Tab` hasta que el control quede resaltado y presioná la barra espaciadora. En el HTML dejé una casilla vinculada a la etiqueta **Ampliar portada**. En `perfil.css`, el selector `:checked` aplica una altura mayor cuando la casilla está marcada y `transition` suaviza el cambio.
 
-En tu rama, duplicá `agenda-contactos/perfil.html` desde el editor y guardá la copia en la misma carpeta como `perfil-nombre-apellido.html`. Usá tus datos en minúsculas, con guiones y sin tildes. Te pido que mantengas las referencias a `estilos.css` y `perfil.css`, y los atributos `id` de la casilla y `for` de su etiqueta. Así podés reutilizar el diseño y la interacción.
+En tu rama, duplicá `team/perfil.html` desde el editor y guardá la copia en la misma carpeta como `perfil-nombre-apellido.html`. Usá tus datos en minúsculas, con guiones y sin tildes. Te pido que mantengas las referencias a `estilos.css` y `perfil.css`, y los atributos `id` de la casilla y `for` de su etiqueta. Así podés reutilizar el diseño y la interacción.
 
-**Para comprobarlo**, revisá que dentro de `agenda-contactos` aparezcan el archivo `perfil.html` y tu copia. En la dirección del perfil modelo que abrió Live Server, reemplazá `perfil.html` por el nombre de tu archivo. Hacé clic en **Ampliar portada**. La imagen debe agrandarse y, con un segundo clic, recuperar su altura inicial.
+**Para comprobarlo**, revisá que dentro de `team` aparezcan el archivo `perfil.html` y tu copia. En la dirección del perfil modelo que abrió Live Server, reemplazá `perfil.html` por el nombre de tu archivo. Hacé clic en **Ampliar portada**. La imagen debe agrandarse y, con un segundo clic, recuperar su altura inicial.
 
 ### 7.2. Personalizá el contenido
 
@@ -111,7 +111,7 @@ Te pido que edites tu copia del perfil con estos cambios.
 
 ### 7.3. Enlazá la ficha con tu perfil
 
-Volvé a `agenda-contactos/index.html` y buscá tu ficha. Te pido que dentro del `<h2>` pongas un enlace alrededor de tu nombre. Si tu ficha ya tiene un enlace, editá el que está ahí. Como los dos HTML están en la misma carpeta, en `href` alcanza con el nombre de tu archivo. Así se vería con el nombre de ejemplo.
+Volvé a `team/index.html` y buscá tu ficha. Te pido que dentro del `<h2>` pongas un enlace alrededor de tu nombre. Si tu ficha ya tiene un enlace, editá el que está ahí. Como los dos HTML están en la misma carpeta, en `href` alcanza con el nombre de tu archivo. Así se vería con el nombre de ejemplo.
 
 ```html
 <h2><a class="enlace-perfil" href="perfil-cosme-fulanito.html">Cosme Fulanito</a></h2>
@@ -130,7 +130,7 @@ Te pido que uses la misma pestaña que abrió Live Server para la página del eq
 Por último, te pido que agregues la página del equipo editada, tu nuevo perfil y la portada. Desde `sitio-web`, ejecutá estos comandos. En la primera línea, sustituí el nombre del HTML y el nombre y la extensión de la imagen por los que usaste.
 
 ```bash
-git add agenda-contactos/index.html agenda-contactos/perfil-cosme-fulanito.html images/portadas/cosme-fulanito.jpg
+git add team/index.html team/perfil-cosme-fulanito.html images/portadas/cosme-fulanito.jpg
 git diff --cached --name-only
 ```
 
