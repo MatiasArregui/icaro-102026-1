@@ -140,3 +140,21 @@ body {
         font-size: 16px;
     }
 }
+
+
+.intereses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.intereses li {
+    background-color: #e8eef7;
+    color: #334155;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
